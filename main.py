@@ -34,3 +34,18 @@ async def image_to_video(image: UploadFile = File(...)):
         "job_id": job_id,
         "message": "Video üretimi başlatıldı (demo)"
     }
+
+from pydantic import BaseModel
+
+class ImageRequest(BaseModel):
+    prompt: str
+
+
+@app.post("/generate-image")
+def generate_image(data: ImageRequest):
+    return {
+        "status": "ok",
+        "type": "text-to-image",
+        "prompt_received": data.prompt,
+        "image_url": "https://via.placeholder.com/512x512.png?text=Shamsart+AI"
+    }
