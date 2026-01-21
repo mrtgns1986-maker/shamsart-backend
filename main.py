@@ -47,5 +47,5 @@ def generate_image(data: ImageRequest):
         "status": "ok",
         "type": "text-to-image",
         "prompt_received": data.prompt,
-        "image_url": "https://via.placeholder.com/512x512.png?text=Shamsart+AI"
+        "image_url": "https://dummyimage.com/512x512/000/fff.png&text=Shamsart+AI"
     }
